@@ -4,7 +4,7 @@
    ========================================================================== */
  
 // >>> AJUSTE AQUI: URL da sua API (ou de um arquivo .json local, ex: "ecopontos.json")
-const API_URL = "http://localhost:3000/api/v1/mogi/ecopontos";
+const API_URL = "https://ecopoint-2.onrender.com/api/v1/mogi/ecopontos";;
  
 // Elementos da página (o script usa "defer", então o HTML já existe)
 const container     = document.getElementById("listaEcopontos");
