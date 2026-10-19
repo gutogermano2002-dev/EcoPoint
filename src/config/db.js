@@ -4,10 +4,14 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || "localhost",
-  user: process.env.DB_USER || "root",
-  password: process.env.DB_PASSWORD || "Joaocaveira7.",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME || "ecopoint",
+  port: Number(process.env.DB_PORT) || 3306,
+  ssl: {
+    rejectUnauthorized: false // Exigido para conexões seguras no Aiven
+  },
   waitForConnections: true,
   connectionLimit: 10
 });
@@ -29,7 +33,7 @@ export async function criarTabelaSeNaoExistir() {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   `;
   await pool.query(sql);
-  console.log("Tabela 'ecopontos' verificada/criada com sucesso no MySQL.");
+  console.log("Tabela 'ecopontos' verificada/criada no MySQL do Aiven.");
 }
 
 export default pool;
