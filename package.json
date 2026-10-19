@@ -1,0 +1,26 @@
+{
+  "name": "projetoetinerario",
+  "version": "1.0.0",
+  "description": "API de Apoio ao Descarte Consciente em Mogi das Cruzes - Projeto de Itinerario Academico",
+  "main": "src/api.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/api.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ods",
+    "mogi-das-cruzes",
+    "descarte-consciente",
+    "express",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6"
+  }
+}

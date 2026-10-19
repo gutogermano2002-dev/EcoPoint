@@ -1,0 +1,350 @@
+/* ==========================================================================
+   Variáveis
+   ========================================================================== */
+:root {
+  --verde-escuro: #166534;
+  --verde: #15803d;
+  --verde-claro: #dcfce7;
+  --amarelo: #facc15;
+  --amarelo-texto: #854d0e;
+  --azul: #0284c7;
+  --vermelho: #ef4444;
+  --vermelho-escuro: #dc2626;
+  --vermelho-claro: #fee2e2;
+ 
+  --fundo: #f8fafc;
+  --fundo-destaque: #f1f5f9;
+  --texto: #1e293b;
+  --texto-suave: #475569;
+  --texto-claro: #64748b;
+  --borda: #cbd5e1;
+ 
+  --sombra-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --sombra-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --sombra-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.12);
+}
+ 
+/* ==========================================================================
+   Reset e base
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+ 
+/* Evita que o menu fixo cubra o título ao clicar nos links */
+section[id] {
+  scroll-margin-top: 80px;
+}
+ 
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+ 
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--verde-escuro);
+}
+ 
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+ 
+.navbar a {
+  text-decoration: none;
+  color: var(--texto-suave);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+ 
+.navbar a:hover {
+  color: var(--verde-escuro);
+}
+ 
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  background: linear-gradient(135deg, var(--verde) 0%, var(--verde-escuro) 100%);
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+ 
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+ 
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+ 
+.btn-hero {
+  background: var(--amarelo);
+  color: var(--amarelo-texto);
+  padding: 12px 28px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+ 
+.btn-hero:hover {
+  transform: scale(1.05);
+}
+ 
+/* ==========================================================================
+   Containers e seções
+   ========================================================================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+ 
+.secao-info {
+  margin-bottom: 4rem;
+}
+ 
+.secao-info h2 {
+  color: var(--verde-escuro);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+ 
+.subtitulo {
+  color: var(--texto-claro);
+  margin-bottom: 1.5rem;
+}
+ 
+.bg-destaque {
+  background: var(--fundo-destaque);
+  padding: 2rem;
+  border-radius: 12px;
+}
+ 
+/* ==========================================================================
+   Cards informativos e leis
+   ========================================================================== */
+.cards-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+ 
+.card-info {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--sombra-sm);
+  border-left: 5px solid var(--verde-escuro);
+}
+ 
+.card-info.danger {
+  border-left-color: var(--vermelho);
+}
+ 
+.card-info.law {
+  border-left-color: var(--azul);
+}
+ 
+.card-info h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+ 
+.pena {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--vermelho-escuro);
+  background: var(--vermelho-claro);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+ 
+/* ==========================================================================
+   Filtros de busca
+   ========================================================================== */
+.filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+ 
+.filtros input,
+.filtros select {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+ 
+.filtros input:focus,
+.filtros select:focus {
+  outline: none;
+  border-color: var(--verde-escuro);
+  box-shadow: 0 0 0 3px rgba(22, 101, 52, 0.15);
+}
+ 
+.filtros button {
+  padding: 12px 24px;
+  background: var(--verde-escuro);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+ 
+.filtros button:hover {
+  background: var(--verde);
+}
+ 
+/* ==========================================================================
+   Cards de ecopontos
+   ========================================================================== */
+.grid-ecopontos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 20px;
+}
+ 
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--sombra-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+ 
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-lg);
+}
+ 
+.card h3 {
+  color: var(--verde-escuro);
+  margin-bottom: 0.5rem;
+}
+ 
+.card p {
+  font-size: 0.92rem;
+  margin-bottom: 0.2rem;
+}
+ 
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 1rem 0;
+}
+ 
+.tag {
+  background: var(--verde-claro);
+  color: var(--verde);
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+ 
+.link-mapa {
+  color: var(--azul);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+ 
+.link-mapa:hover {
+  text-decoration: underline;
+}
+ 
+/* Mensagens "Carregando..." e "Nenhum ecoponto encontrado" */
+.carregando {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--texto-claro);
+  padding: 2rem 1rem;
+  background: white;
+  border: 2px dashed var(--borda);
+  border-radius: 10px;
+}
+ 
+/* ==========================================================================
+   Rodapé
+   ========================================================================== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #0f172a;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+ 
+/* ==========================================================================
+   Responsivo
+   ========================================================================== */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+ 
+  .navbar ul {
+    gap: 14px;
+    font-size: 0.9rem;
+  }
+ 
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+ 
+  .bg-destaque {
+    padding: 1.2rem;
+  }
+ 
+  .filtros button {
+    width: 100%;
+  }
+}

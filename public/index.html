@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Informações sobre descarte correto de resíduos e mapa de ecopontos em Mogi das Cruzes.">
+  <title>Descarte Consciente &amp; Ecopontos - Mogi das Cruzes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+ 
+  <!-- Menu de navegação -->
+  <nav class="navbar" aria-label="Navegação principal">
+    <div class="logo">🌱 EcoMogi</div>
+    <ul>
+      <li><a href="#impacto">O Problema</a></li>
+      <li><a href="#leis">Legislação</a></li>
+      <li><a href="#ecopontos">Encontrar Ecoponto</a></li>
+    </ul>
+  </nav>
+ 
+  <!-- Hero -->
+  <header class="hero">
+    <h1>Conscientização e Descarte Correto de Resíduos</h1>
+    <p>Projeto de Extensão Acadêmica para apoio à sustentabilidade e à preservação ambiental em Mogi das Cruzes.</p>
+    <a href="#ecopontos" class="btn-hero">Encontrar Ecoponto Próximo</a>
+  </header>
+ 
+  <main class="container">
+ 
+    <!-- Seção 1: Impacto e degradação -->
+    <section id="impacto" class="secao-info">
+      <h2>⚠️ O Impacto do Descarte Incorreto no Meio Ambiente</h2>
+      <div class="cards-info">
+        <article class="card-info danger">
+          <h3>🏭 Poluição de Rios e Solo</h3>
+          <p>O descarte irregular de entulho e lixo eletrônico libera metais pesados (como chumbo e mercúrio) e chorume no solo, contaminando lençóis freáticos e os rios da nossa região.</p>
+        </article>
+        <article class="card-info danger">
+          <h3>🌊 Inundações e Saneamento</h3>
+          <p>Móveis, pneus e entulhos jogados em vias públicas ou terrenos baldios entopem bueiros e assoreiam cursos d'água, aumentando drasticamente o risco de enchentes urbanas.</p>
+        </article>
+        <article class="card-info danger">
+          <h3>🦟 Riscos à Saúde Pública</h3>
+          <p>O acúmulo de resíduos a céu aberto cria focos de reprodução do mosquito <em>Aedes aegypti</em> (dengue, zika, chikungunya) e atrai vetores de doenças como ratos e escorpiões.</p>
+        </article>
+      </div>
+    </section>
+ 
+    <!-- Seção 2: Legislação e crime ambiental -->
+    <section id="leis" class="secao-info bg-destaque">
+      <h2>⚖️ O que diz a Lei sobre o Descarte Irregular?</h2>
+      <p class="subtitulo">Jogar lixo ou entulho em locais não autorizados não é apenas falta de civilidade: <strong>é crime ambiental amparado por lei</strong>.</p>
+ 
+      <div class="cards-info">
+        <article class="card-info law">
+          <h3>Lei de Crimes Ambientais (Lei Federal nº 9.605/1998)</h3>
+          <p><strong>Artigo 54:</strong> Causar poluição de qualquer natureza em níveis tais que resultem ou possam resultar em danos à saúde humana, ou que provoquem a mortandade de animais ou a destruição significativa da flora.</p>
+          <span class="pena">Pena: reclusão de 1 a 4 anos e multa.</span>
+        </article>
+ 
+        <article class="card-info law">
+          <h3>Política Nacional de Resíduos Sólidos (Lei nº 12.305/2010)</h3>
+          <p>Estabelece a responsabilidade compartilhada pelo ciclo de vida dos produtos e proíbe expressamente o lançamento de resíduos sólidos em praias, mares e quaisquer corpos d'água, bem como a queima a céu aberto.</p>
+        </article>
+ 
+        <article class="card-info law">
+          <h3>Código de Posturas Municipal</h3>
+          <p>A Prefeitura de Mogi das Cruzes fiscaliza e aplica multas a cidadãos e empresas flagrados descartando entulho, restos de obras ou móveis em vias públicas, praças e terrenos.</p>
+        </article>
+      </div>
+    </section>
+ 
+    <!-- Seção 3: A solução (busca de ecopontos) -->
+    <section id="ecopontos" class="secao-info">
+      <h2>📍 A Solução: Encontre um Ecoponto em Mogi das Cruzes</h2>
+      <p class="subtitulo">Os ecopontos são locais gratuitos preparados para receber seus resíduos com destinação ambientalmente adequada.</p>
+ 
+      <div class="filtros" role="search">
+        <input type="search" id="filtroBairro" placeholder="Buscar por bairro (ex: Jundiapeba)" aria-label="Buscar por bairro, nome ou endereço" autocomplete="off">
+ 
+        <select id="filtroResiduo" aria-label="Filtrar por tipo de resíduo">
+          <option value="">Todos os resíduos</option>
+          <option value="oleo">Óleo de cozinha</option>
+          <option value="eletronicos">Eletrônicos</option>
+          <option value="entulho">Entulho / restos de obra</option>
+          <option value="moveis">Móveis e estofados</option>
+          <option value="pneus">Pneus</option>
+          <option value="pilhas">Pilhas e baterias</option>
+          <option value="lampadas">Lâmpadas</option>
+          <option value="reciclaveis">Recicláveis gerais</option>
+        </select>
+ 
+        <button type="button" id="btnBuscar">Buscar</button>
+      </div>
+ 
+      <!-- Os cards são desenhados aqui pelo scripts.js -->
+      <div id="listaEcopontos" class="grid-ecopontos" aria-live="polite">
+        <p class="carregando">Carregando ecopontos...</p>
+      </div>
+    </section>
+ 
+  </main>
+ 
+  <footer>
+    <p>Projeto de Extensão Acadêmica — Conscientização Ambiental e Mapeamento de Ecopontos em Mogi das Cruzes.</p>
+  </footer>
+ 
+</body>
+</html>
