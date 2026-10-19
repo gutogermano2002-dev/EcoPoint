@@ -8,12 +8,13 @@ const pool = mysql.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME || "ecopoint",
-  port: Number(process.env.DB_PORT) || 3306,
+  port: Number(process.env.DB_PORT) || 17184,
   ssl: {
-    rejectUnauthorized: false // Exigido para conexões seguras no Aiven
+    rejectUnauthorized: false // Exigido para aceitar os certificados SSL do Aiven
   },
   waitForConnections: true,
-  connectionLimit: 10
+  connectionLimit: 10,
+  connectTimeout: 30000 // Aumenta o tempo limite para 30 segundos
 });
 
 export async function criarTabelaSeNaoExistir() {
@@ -33,7 +34,7 @@ export async function criarTabelaSeNaoExistir() {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   `;
   await pool.query(sql);
-  console.log("Tabela 'ecopontos' verificada/criada no MySQL do Aiven.");
+  console.log("Tabela 'ecopontos' verificada/criada com sucesso no MySQL do Aiven.");
 }
 
 export default pool;
